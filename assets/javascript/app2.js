@@ -39,13 +39,13 @@ function populateQuestions() {
 
 
     for (var i = 0; i < questions.length; i++) {
-    $("#MainArea").append("<h4>" + questions[i].question + "<h4>");
-    for (var j = 0; j < questions[i].answers.length; j++) {
-        $("#MainArea").append("<input type='radio' name='question-" + i +
-        "' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
-      }
+        $("#MainArea").append("<h4>" + questions[i].question + "<h4>");
+        for (var j = 0; j < questions[i].answers.length; j++) {
+            $("#MainArea").append("<input type='radio' name='question-" + i +
+                "' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
+        }
     };
-    
+
     console.log("function: populateQuestions works");
 
 };
@@ -57,7 +57,7 @@ function startTimer() {
     start = setInterval(function() {
         number--;
         $("#counter").html("<h5> Time Remaining: " + number + "</h5");
-        console.log(number); 
+        console.log(number);
         if (number <= 0) {
             console.log("Times up!");
             clearInterval(start);
@@ -79,20 +79,21 @@ function gameReset() {
 
 };
 
-// function calculateResults() {
-//     // var userInput = 
-//     // for(var k = 0; k < questions.length; k++){
-//     //     if(questions.answers == questions.corrAnswr) {
-//     //         questionsAnsweredCorr++;
-//     //     } else {
-//     //         questionsAnsweredIncorr++;
-//     //     }
+function calculateResults() {
+    // var userInput = 
+    for(var k = 0; k < questions.length; k++){
+        if(questions.answers == questions.corrAnswr) {
+            questionsAnsweredCorr++;
+        } else {
+            questionsAnsweredIncorr++;
+        }
+    }    
 
-//     // console.log("questionsAnsweredCorr" + questionsAnsweredCorr);
-//     // console.log("questionsAnsweredIncorr" + questionsAnsweredIncorr);
-//     console.log("function: calculateResults works");
+    console.log("questionsAnsweredCorr" + questionsAnsweredCorr);
+    console.log("questionsAnsweredIncorr" + questionsAnsweredIncorr);
+    console.log("function: calculateResults works");
 
-// };
+};
 
 function presentResults() {
     console.log("function: presentResults works");
@@ -117,6 +118,7 @@ $(document).ready(function() {
     $("#StartBtn").click(function() {
         populateQuestions();
         startTimer();
+        $("#DoneBtn").show();
         console.log("click event: StartBtn fired")
 
     });
