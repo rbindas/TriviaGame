@@ -79,21 +79,20 @@ function gameReset() {
 
 };
 
-function calculateResults() {
-    var userInput = 
-    for(var k = 0; k < questions.length; k++){
-        if(questions.answers == questions.corrAnswr) {
-            questionsAnsweredCorr++;
-        } else {
-            questionsAnsweredIncorr++;
-        }
+// function calculateResults() {
+//     // var userInput = 
+//     // for(var k = 0; k < questions.length; k++){
+//     //     if(questions.answers == questions.corrAnswr) {
+//     //         questionsAnsweredCorr++;
+//     //     } else {
+//     //         questionsAnsweredIncorr++;
+//     //     }
 
-    };
-    console.log("questionsAnsweredCorr" + questionsAnsweredCorr);
-    console.log("questionsAnsweredIncorr" + questionsAnsweredIncorr);
-    console.log("function: calculateResults works");
+//     // console.log("questionsAnsweredCorr" + questionsAnsweredCorr);
+//     // console.log("questionsAnsweredIncorr" + questionsAnsweredIncorr);
+//     console.log("function: calculateResults works");
 
-};
+// };
 
 function presentResults() {
     console.log("function: presentResults works");
@@ -111,6 +110,7 @@ function stop() {
 $(document).ready(function() {
     $("#counter").hide();
     $(".results").hide();
+    $("#DoneBtn").hide();
 
 
     //   StartBtn
